@@ -54,7 +54,6 @@ void scheduler(int arguments)
 		quantum++;
 		if(quantum==QUANTUM)
 		{
-			threads[callingthread].status=READY;
 			_enqueue(&ready,callingthread);
 			quantum = 0;
 			changethread=1;
