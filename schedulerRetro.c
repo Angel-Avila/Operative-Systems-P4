@@ -124,7 +124,7 @@ void scheduler(int arguments)
 			int counter, threadIndex = 0;
 			for(counter = QUEUE_LEVELS-1; counter>=0; counter--) // Se busca la prioridad más alta
 			{
-				if((threadsPriority[counter] >= threadsPriority[threadIndex] && (threads[counter].status==READY || threads[counter].status==RUNNING)))
+				if((threadsPriority[counter] <= threadsPriority[threadIndex] && (threads[counter].status==READY || threads[counter].status==RUNNING)))
 				{
 					threadIndex = counter;
 				}
